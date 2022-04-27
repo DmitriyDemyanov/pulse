@@ -1,6 +1,13 @@
 @import 'base/variables';
 @import 'base/fonts';
+@import 'blocks/promo';
+@import 'blocks/header';
+@import 'blocks/buttons';
 
 html {
     font-family: 'Museo', 'MuseoModerno', sans-serif;
+}
+.container{
+    max-width: 950px;
+    margin: 0 auto;
 }
