@@ -23,4 +23,36 @@
         margin: 0;
         margin-top: 17px;  
     }  
-}
+    &__icons {
+        display: flex;
+        margin-top: 61px;
+        margin-bottom: 68px;
+    }
+    &__icon {
+        text-align: center;
+        min-width: 120px;
+        font-family: "MuseoModerno";
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        &:nth-child(2) {
+            margin: 0 41px 0 39px;
+        }
+        img{
+            display:block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+        }
+    }
+    &__link {
+        color:#fff;
+        margin-top: 23px;
+        font-size: 16px;
+        a {
+            text-transform: uppercase;
+            color:#fff;
+        }    
+    }
+}   
