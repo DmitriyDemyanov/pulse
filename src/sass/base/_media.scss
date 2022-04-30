@@ -1,0 +1,65 @@
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 991px) {
+    .promo__wrapper {
+        align-items: center;
+    }
+    .advantage_icon {
+        width: 33.33%;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        justify-content: space-around;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        &__official {
+            order: 1;
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
+    .promo__wrapper {
+        margin-top: 30px;
+    }
+    .advantage {
+        &_icons {
+            flex-wrap: wrap;
+        }
+       
+        &_icon {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+
+    .header__phone {
+        margin-top: 20px;
+    }
+   .promo{
+        &__header {
+           font-size: 26px;
+        }
+        &__subheader {
+            font-size: 14px;
+        }
+        &__icon {
+            min-width: 110px;
+            &:nth-child(2) {
+                margin: 0;
+            }
+        }
+    }
+    .advantage h2 {
+        font-size: 22px;
+    } 
+}
+
+
+
+
