@@ -1,12 +1,18 @@
 @import 'base/variables';
 @import 'base/fonts';
+
 @import 'blocks/promo';
 @import 'blocks/header';
 @import 'blocks/buttons';
 @import 'blocks/advantage';
-@import 'base/media';
 @import 'blocks/consultation';
 @import 'blocks/forms';
+@import 'blocks/carousel';
+@import 'blocks/catalog';
+@import 'blocks/review';
+
+@import 'base/media';
+
 html {
     font-family: 'Museo', 'MuseoModerno', sans-serif;
 }
