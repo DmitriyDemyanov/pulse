@@ -20,6 +20,9 @@
     .review {
         padding-left: 30px;
     }
+    .footer-contacts {
+        top: 100%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -89,6 +92,17 @@
         }
         img {
             margin-bottom: 20px;
+        }
+    }
+    .modal {
+        width: 100%;
+        padding: 35px 5px 40px;
+        &__close {
+            top: -20px;
+            right: 0;
+        }
+        .feed-form {
+            width: 100%;
         }
     }
 }
