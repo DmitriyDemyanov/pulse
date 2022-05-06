@@ -75,22 +75,55 @@ $(document).ready(function(){
         });  
     };
     toggleSlide('.catalog-item__link');
-    toggleSlide('.catalog-item__back');  
+    toggleSlide('.catalog-item__back');
+
+          //Modal
+
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow');
+    })
+    $('.modal__close').on('click', function() {
+        $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+    })
+
+    $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+        })
+    }) 
 });
 
 
 
-let activeTab = document.querySelector(".catalog__tab.active");
-const tabs = document.querySelector(".catalog__tabs");
+// let activeTab = document.querySelector(".catalog__tab.active");
+// const tabs = document.querySelector(".catalog__tabs");
 
-// tabs.addEventListener("click", onClickTabs);
+// // tabs.addEventListener("click", onClickTabs);
 
-function onClickTabs(event) {
-    const target = event.target.closest(".catalog__tab");
-    if (target !== null) {
-        activeTab.classList.remove("active");
-        target.classList.add("active");
-        activeTab = target;
-    }
-}
+// function onClickTabs(event) {
+//     const target = event.target.closest(".catalog__tab");
+//     if (target !== null) {
+//         activeTab.classList.remove("active");
+//         target.classList.add("active");
+//         activeTab = target;
+//     }
+// }
+
+// function initMap() {
+//     // The location of Uluru
+//     const uluru = { lat: -25.344, lng: 131.031 };
+//     // The map, centered at Uluru
+//     const map = new google.maps.Map(document.getElementById("map"), {
+//       zoom: 4,
+//       center: uluru,
+//     });
+//     // The marker, positioned at Uluru
+//     const marker = new google.maps.Marker({
+//       position: uluru,
+//       map: map,
+//     });
+//   }
+  
+// window.initMap = initMap;
 
