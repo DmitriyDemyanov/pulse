@@ -140,17 +140,22 @@
         }
         &__list {
             position: relative;
+            transform: translateX(0%);
+            transition: 0.5s all;
             margin-left: 20px;
             width: 50%;
-            transform: translateX(0%);
             padding-right: 20px;
-            transition: 0.5s all;
-            padding-left: 19px;
             margin-bottom: 0;
-            list-style-type: none;
+            padding-left: 19px;
             &_active {
                 transform: translateX(-100%);
                 margin-right: 0px;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
             }
             
             li {
