@@ -32,33 +32,33 @@ gulp.task('styles', function(){
             })) 
             .pipe(cleanCSS({compatibility: 'ie8'}))   
             .pipe(gulp.dest('src/css'))
-            .pipe(gulp.dest("dist/css"))
+            .pipe(gulp.dest("docs/css"))
             .pipe(browserSync.stream())
 });
 
 gulp.task('scripts', () => (
     gulp.src("src/js/**/*.js")
-        .pipe(gulp.dest("dist/js"))
+        .pipe(gulp.dest("docs/js"))
 ));
 
 gulp.task('css', () => (
     gulp.src('src/css/**/*')
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('docs/css'))
 ));
 
 gulp.task('html', () => (
     gulp.src('src/*.html')
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('docs'))
 ));
 
 gulp.task('images', () => (
     gulp.src("src/img/**/*")
-        .pipe(gulp.dest("dist/img"))
+        .pipe(gulp.dest("docs/img"))
 ));
 
 gulp.task('fonts', () => (
     gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest("dist/fonts"))
+        .pipe(gulp.dest("docs/fonts"))
 ));
 
 gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'css'));
