@@ -1,9 +1,9 @@
-const gulp        = require('gulp');
-const browserSync = require('browser-sync');
-const sass = require('gulp-sass')(require('sass'));
-const rename = require("gulp-rename");
+const gulp         = require('gulp');
+const browserSync  = require('browser-sync');
+const sass         = require('gulp-sass')(require('sass'));
+const rename       = require("gulp-rename");
 const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
+const cleanCSS     = require('gulp-clean-css');
 
 // Static server
 gulp.task('server', function() {
@@ -13,6 +13,11 @@ gulp.task('server', function() {
         },
         browser: "Chrome"
     });
+});
+
+gulp.task('watch', function(){
+    gulp.watch('src/sass/**/*.+(scss|sass)', gulp.parallel('styles'))
+    gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('styles', function(){
@@ -27,14 +32,37 @@ gulp.task('styles', function(){
             })) 
             .pipe(cleanCSS({compatibility: 'ie8'}))   
             .pipe(gulp.dest('src/css'))
+            .pipe(gulp.dest("docs/css"))
             .pipe(browserSync.stream())
-})
-
-gulp.task('watch', function(){
-    gulp.watch('src/sass/**/*.+(scss|sass)', gulp.parallel('styles'))
-    gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles'));
+gulp.task('scripts', () => (
+    gulp.src("src/js/**/*.js")
+        .pipe(gulp.dest("docs/js"))
+));
+
+gulp.task('css', () => (
+    gulp.src('src/css/**/*')
+        .pipe(gulp.dest('docs/css'))
+));
+
+gulp.task('html', () => (
+    gulp.src('src/*.html')
+        .pipe(gulp.dest('docs'))
+));
+
+gulp.task('images', () => (
+    gulp.src("src/img/**/*")
+        .pipe(gulp.dest("docs/img"))
+));
+
+gulp.task('fonts', () => (
+    gulp.src("src/fonts/**/*")
+        .pipe(gulp.dest("docs/fonts"))
+));
+
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'css'));
+
+gulp.task('build', gulp.parallel('fonts', 'images', 'html', 'scripts', 'styles', 'css'));
 
 
